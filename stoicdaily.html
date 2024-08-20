@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Morning Stoic</title>
+    <style>
+        /* Reset some basic elements */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Georgia', serif;
+            color: #333;
+            line-height: 1.6;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            padding: 20px;
+            background: url('https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80') no-repeat center center/cover;
+        }
+        .image-container {
+            margin-bottom: 20px;
+        }
+        .image-container img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        .container {
+            background-color: rgba(255, 255, 255, 0.85);
+            padding: 40px;
+            border-radius: 10px;
+            max-width: 700px;
+            width: 100%;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            transition: all 0.3s ease-in-out;
+        }
+        .container:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+        }
+        h1 {
+            font-size: 2.8em;
+            color: #4a7c59;
+            margin-bottom: 20px;
+        }
+        p {
+            font-size: 1.6em;
+            color: #555;
+            margin-bottom: 30px;
+            line-height: 1.8;
+        }
+        button {
+            font-size: 1.2em;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 25px;
+            background-color: #4a7c59;
+            color: #fff;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+        button:hover {
+            background-color: #3b644a;
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+<body>
+
+<div class="image-container">
+    <img src="/Users/gokul.menon/Downloads/stoic.png" alt="Stoic Image">
+</div>
+
+<div class="container">
+    <h1>Morning Stoic</h1>
+    <p id="randomContent"></p>
+    <button onclick="generateRandomContent()">Get Inspired</button>
+</div>
+
+<script>
+    const quotes = [
+        "“It is not death that a man should fear, but he should fear never beginning to live.” – Marcus Aurelius",
+        "“The happiness of your life depends upon the quality of your thoughts.” – Marcus Aurelius",
+        "“Waste no more time arguing about what a good man should be. Be one.” – Marcus Aurelius",
+        "“He who fears death will never do anything worth of a man who is alive.” – Seneca",
+        "“Difficulties strengthen the mind, as labor does the body.” – Seneca",
+        "“You have power over your mind - not outside events. Realize this, and you will find strength.” – Marcus Aurelius",
+        "“We suffer more often in imagination than in reality.” – Seneca",
+        "“He who is brave is free.” – Seneca",
+        "“The best revenge is not to be like your enemy.” – Marcus Aurelius",
+        "“If it is not right, do not do it, if it is not true, do not say it.” – Marcus Aurelius"
+    ];
+
+    function generateRandomContent() {
+        const randomIndex = Math.floor(Math.random() * quotes.length);
+        document.getElementById('randomContent').textContent = quotes[randomIndex];
+    }
+
+    window.onload = generateRandomContent;
+</script>
+
+</body>
+</html>
